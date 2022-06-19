@@ -1,0 +1,171 @@
+{% load static %}
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'random/startjs.js' %}"></script>
+<link href="{% static 'random/startstyle.css' %}" rel='stylesheet' type='text/css'>
+
+
+<div class="container">
+<div class="background">
+ <h1>Time to Relax</h1>
+ <div class="layer layer-1"></div>
+ <div class="layer layer-2"></div>
+ <div class="layer layer-3"></div>
+</div>
+<div class="content">
+ <div>
+
+        <br><br><br>
+         <p class="text">Hi there!</p>
+         <p class="text">Nice to see you again</p>
+         <form method="get" class="text" action="http://127.0.0.1:8000/breath">
+          {% csrf_token %}
+         <p class="text">What's on your mind?
+           <br>
+           <input type="text" id="test" name="mind" value="" onclick=record()><br><br>
+           <script>
+              function record() {
+                var recognition = new webkitSpeechRecognition();
+                recognition.lang = "en-US";
+                recognition.continuous = true;
+                recognition.intermResults = true;
+                recognition.start();
+                myelement = document.getElementById("test")
+                recognition.onresult = function(event) {
+                  console.log(event)
+                  myelement.setAttribute('value', event.results[0][0].transcript)
+                }
+
+
+
+              }
+           </script>
+           </p>
+          <br><br><br>
+
+         <p class="text">What do you see as being the biggest problem?
+           <br>
+           <input type="text" id="box" onclick=record2() name="prob"><br><br>
+           <script>
+              function record2() {
+                var recognition = new webkitSpeechRecognition();
+                recognition.lang = "en-US";
+                recognition.continuous = true;
+                recognition.intermResults = true;
+                recognition.start();
+                myelement = document.getElementById("box")
+                recognition.onresult = function(event) {
+                  console.log(event)
+                  myelement.setAttribute('value', event.results[0][0].transcript)
+                }
+
+
+
+              }
+           </script>
+           </p>
+           <br><br><br>
+           <p class="text">How does this problem make you feel?
+           <br>
+           <input type="text" id="box1" name="feel" onclick=record3()><br><br>
+           <script>
+              function record3() {
+                var recognition = new webkitSpeechRecognition();
+                recognition.lang = "en-US";
+                recognition.continuous = true;
+                recognition.intermResults = true;
+                recognition.start();
+                myelement = document.getElementById("box1")
+                recognition.onresult = function(event) {
+                  console.log(event)
+                  myelement.setAttribute('value', event.results[0][0].transcript)
+                }
+
+
+
+              }
+           </script>
+           </p>
+           <br><br><br>
+           <p class="text">What positive changes would you like to see happen in your life?
+           <br>
+           <input type="text" id="box2" name="changes" onclick=record4()><br><br>
+           <script>
+              function record4() {
+                var recognition = new webkitSpeechRecognition();
+                recognition.lang = "en-US";
+                recognition.continuous = true;
+                recognition.intermResults = true;
+                recognition.start();
+                myelement = document.getElementById("box2")
+                recognition.onresult = function(event) {
+                  console.log(event)
+                  myelement.setAttribute('value', event.results[0][0].transcript)
+                }
+
+
+
+              }
+           </script>
+           </p>
+   <br><br><br>
+   <p class="text">What would it take for you to feel happier or more at peace?
+           <br>
+           <input type="text" id="box3" name="peace" onclick=record5()><br><br>
+           <script>
+              function record5() {
+                var recognition = new webkitSpeechRecognition();
+                recognition.lang = "en-US";
+                recognition.continuous = true;
+                recognition.intermResults = true;
+                recognition.start();
+                myelement = document.getElementById("box3")
+                recognition.onresult = function(event) {
+                  console.log(event)
+                  myelement.setAttribute('value', event.results[0][0].transcript)
+                }
+
+
+
+              }
+           </script>
+           </p>
+     <br><br><br>
+     <p class="text">Hmm... I see.
+     <br>
+       Tell me about your hobbies, your favorites. </p>
+
+   </p>
+
+ <label for="artist">Artist:</label><br>
+ <input type="text" id="lname" name="artist"><br><br>
+ <label for="youtuber">Youtuber:</label><br>
+ <input type="text" id="lname" name="youtuber"><br><br>
+ <label for="show">TV Show:</label><br>
+ <input type="text" id="lname" name="show"><br><br>
+ <label for="team">Sports Team:</label><br>
+ <input type="text" id="lname" name="team"><br><br>
+     <br><br>
+
+<br><br><br>
+<p class="text"> I see. Let's take a few minutes to take a deep breath then. </p>
+<!-- <nav><ul><li> <input class="wtv" type="submit" value="Breath"></li></ul></nav> -->
+<nav><ul><li><a onclick="this.closest('form').submit();return false;" href="http://127.0.0.1:8000/breath">Breath </a></li></ul></nav> 
+</form>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+   <img class="rock-1 rocks" src="https://www.squishable.com/mm5/graphics/00000001/international_panda_plane.png" alt="panda"/>
+   <img class="rock-2 rocks" src="https://www.cloud-awards.com/wp-content/uploads/2016/02/main-center-med-1.png" alt="cloud"/>
+   <img class="rock-3 rocks" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/64862ac6-78fd-48c3-9c17-a673fa891a3d/d8s01pn-c22795f6-cc64-4a3b-88ec-6aba62d89539.png/v1/fit/w_375,h_338,strp/cartoon_cat_flying_on_jindujun_by_yoshiko_animation_d8s01pn-375w.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTQwIiwicGF0aCI6IlwvZlwvNjQ4NjJhYzYtNzhmZC00OGMzLTljMTctYTY3M2ZhODkxYTNkXC9kOHMwMXBuLWMyMjc5NWY2LWNjNjQtNGEzYi04OGVjLTZhYmE2MmQ4OTUzOS5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.K9OHX7BNeYKKFXK8oxUPtZbbEOvkxqQwTcdWV9KMC9s" alt="cat"/>
+    <img class="rock-4 rocks" src="https://media1.giphy.com/media/ghiMEnnnIE5xe/giphy.gif" alt="rock"/>
+    <img class="rock-5 rocks" src="https://www.cloud-awards.com/wp-content/uploads/2016/02/main-center-med-1.png" alt="cloud"/>
+    <img class="rock-6 rocks" src="https://brewmybeer.eu/assets/templates/front/vt/img/oblak_3.png" alt="cloud"/>
+    <img class="rock-7 rocks" src="https://www.cloud-awards.com/wp-content/uploads/2016/02/cloud-rhs-smaller.png" alt="cloud"/>
+     <img class="rock-8 rocks" src="https://www.icegif.com/wp-content/uploads/pusheen-flying-icegif.gif" alt="catfly"/>
+     <img class="rock-9 rocks" src="https://qph.cf2.quoracdn.net/main-qimg-2e2575671b6525b02b1c5985f5de56fa" alt="dog"/>
+   <div class="rock"></div>
+</div>
+
+</div>

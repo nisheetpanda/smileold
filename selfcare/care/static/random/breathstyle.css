@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+
+body {
+  background-image: url("https://wallpapercave.com/uwp/uwp609119.jpeg");
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  max-width: 100%;
+}
+nav {
+  position: absolute;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 12px;
+  margin-top: 1px;
+  margin-right: 2px;
+  right:0;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  width:100%;
+}
+nav ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+nav ul li a
+{
+  text-decoration:none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 1000px;
+}
+nav ul li a:hover {
+  background: #00f;
+  color: #fff
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  color: white;
+  border: 1px solid white;
+  padding: 0 20px 0 20px;
+  letter-spacing: 4px;
+  font-style: italic;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+#breathe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
+  border-radius: 60%;
+  border: 0px hidden #000000;
+  background: linear-gradient(to right, #314755, #26a0da);
+  box-shadow: 10px 10px 68px -2px rgba(0, 0, 0, 0.75);
+  animation: grow 10s infinite;
+  transform: scale(1);
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.75);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.75);
+  }
+}
+
+#action {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  letter-spacing: 4px;
+  font-style: italic;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.7;
+}

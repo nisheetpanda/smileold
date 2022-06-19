@@ -1,0 +1,49 @@
+{% load static %}
+
+<html>
+  <head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'breathjs.js' %}"></script>
+<link href="{% static 'random/breathstyle.css' %}" rel='stylesheet' type='text/css'>
+<script>
+
+  //action = window.document.getElementById("action");
+  
+  </script>
+</head>
+<body>
+  <form method="get" class="text" action="http://127.0.0.1:8000/final">
+    <input type="hidden" id="custId" name="mind" value="{{ min }}"> 
+    <input type="hidden" id="custId" name="artist" value="{{ artis }}"> 
+    <input type="hidden" id="custId" name="youtuber" value="{{ youtube }}"> 
+    <input type="hidden" id="custId" name="show" value="{{ sho }}"> 
+    <input type="hidden" id="custId" name="team" value="{{ tea }}"> 
+  
+  <div class="container">
+    <div class="nav">
+      <span id="time">2 minutes</span>
+    </div>
+    <div class="card">
+      <div id="breathe">
+        <span id="action"> Inhale</span>
+
+      </div>
+    </div>
+    <nav><ul><li><a onclick="this.closest('form').submit();return false;" href="http://127.0.0.1:8000/final">Continue </a></li></ul></nav> 
+  </div>
+ 
+
+</form>
+</body>
+
+<html>
+
+<body>
+  <script>
+    setTimeout(function() {
+      window.location.href = "http://127.0.0.1:8000/final";
+    }, 120000);
+  </script>
+</body>
+
+</html>
